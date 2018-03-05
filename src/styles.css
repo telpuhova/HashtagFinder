@@ -1,5 +1,31 @@
 /* You can add global styles to this file, and also import other style files */
 /* Google Font Source Sans Pro */
+/* https://color.adobe.com/Ventana-Azul-color-theme-2159606/edit/?copy=true&base=2&rule=Custom&selected=0&name=Copy%20of%20Ventana%20Azul&mode=rgb&rgbvalues=0.9490196078431372,0.2196078431372549,0.35294117647058826,0.9607843137254902,0.6470588235294118,0.011764705882352941,0.9490196078431372,0.9490196078431372,0.9490196078431372,0.2901960784313726,0.8509803921568627,0.8509803921568627,0.4588235294117647,0.47843137254901963,0.8196078431372549&swatchOrder=0,1,2,3,4 */
 body {
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.red {
+  color: #F2385A;
+}
+.red:hover {
+  color: #FF3F72;
+}
+.orange {
+  color: #F5A503;
+}
+.orange:hover {
+  color: #FFB50E;
+}
+.teal {
+  color: #4AD9D9;
+}
+.teal:hover{
+  color: #6BFFFF;
+}
+.purple {
+  color: #757AD1;
+}
+.purple:hover {
+  color: #8FA8FF;
 }
