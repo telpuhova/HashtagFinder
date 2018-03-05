@@ -3,6 +3,6 @@ var config = {
    authDomain: "hashtagfinder-94005.firebaseapp.com",
    databaseURL: "https://hashtagfinder-94005.firebaseio.com",
    projectId: "hashtagfinder-94005",
-   storageBucket: "",
+   storageBucket: "hashtagfinder-94005.appspot.com",
    messagingSenderId: "241041097780"
  };
