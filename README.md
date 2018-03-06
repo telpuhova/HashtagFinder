@@ -16,8 +16,9 @@ var appsettings = {
 
 module.exports = appsettings;
 ```
-* go to server and run `npm start`
-* go to client and run `ng serve`
+* you will need to open two terminals and open server in one terminal and client in another terminal.
+* navigate to the server folder and run `npm start`
+* navigate to client folder and run `ng serve`
 
 ## Development server
 

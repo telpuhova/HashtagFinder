@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { twitterCredentials } from '../app.module';
+// import { twitterCredentials } from '../app.module';
 
 @Component({
   selector: 'app-info-display',
@@ -7,7 +7,7 @@ import { twitterCredentials } from '../app.module';
   styleUrls: ['./info-display.component.css']
 })
 export class InfoDisplayComponent implements OnInit {
-  testCredential = twitterCredentials.TWITTER_CONSUMER_KEY;
+  // testCredential = twitterCredentials.TWITTER_CONSUMER_KEY;
 
   @Input() childInfo;
 
