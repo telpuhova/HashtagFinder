@@ -1,1 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
+html, body {
+  height: 100%;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+.mainBox {
+  height: 100%;
+}
+.red {
+  color: #F2385A;
+}
+.red:hover {
+  color: #FF3F72;
+}
+.orange {
+  color: #F5A503;
+}
+.orange:hover {
+  color: #FFB50E;
+}
+.teal {
+  color: #4AD9D9;
+}
+.teal:hover{
+  color: #6BFFFF;
+}
+.purple {
+  color: #757AD1;
+}
+.purple:hover {
+  color: #8FA8FF;
+}
