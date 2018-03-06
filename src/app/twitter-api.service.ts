@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { HttpHeaders } from '@angular/common/http';
+// import { HttpHeaders } from '@angular/common/http';
 import { masterEncodedCredentials } from 'app/encodedCredentials';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    'Content-Type':  'application/x-www-form-urlencoded;charset=UTF-8',
-    'Authorization': 'Basic ' + masterEncodedCredentials.encodedString
-  })
-};
+// const httpOptions = {
+//   headers: new HttpHeaders({
+//     'Content-Type':  'application/x-www-form-urlencoded;charset=UTF-8',
+//     'Authorization': 'Basic ' + masterEncodedCredentials.encodedString
+//   })
+// };
 
 @Injectable()
 export class TwitterApiService {
@@ -23,11 +23,24 @@ export class TwitterApiService {
     this.localEncodedCredentials = btoa(concatenated);
     masterEncodedCredentials.encodedString = this.localEncodedCredentials;
 
-    // return btoa(concatenated);
+    return btoa(concatenated);
+  }
+
+  addCustomHeaders(headers:Headers) {
+    headers.append('Authorization', 'Basic ' +
+      masterEncodedCredentials.encodedString);
+    headers.append('Content-Type', 'application/x-www-form-urlencoded;charset=UTF-8');
   }
 
   postToObtainABearerToken() {
-    return this.http.post('api.twitter.com/oauth2/token', 'grant_type=client_credentials', httpOptions);
+    var headers = new Headers();
+    this.addCustomHeaders(headers);
+
+    return this.http.post(
+      'https://api.twitter.com/oauth2/token', 'grant_type=client_credentials', {
+        headers: headers
+      }
+    );
   }
 
   getInfoTest() {

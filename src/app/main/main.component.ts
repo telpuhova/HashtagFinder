@@ -24,10 +24,13 @@ export class MainComponent implements OnInit {
     //encode credentials
     let consumerKey = twitterCredentials.TWITTER_CONSUMER_KEY;
     let consumerSecret = twitterCredentials.TWITTER_CONSUMER_SECRET;
+
     this.encodedCredentials = this.twitterApiService.encodeCredentials(consumerKey, consumerSecret);
 
     //post request to obtain bearer token
-    this.twitterApiService.postToObtainABearerToken();
+    this.twitterApiService.postToObtainABearerToken().subscribe(response => {
+        console.log(response.json());
+    });
   }
 
   getInfoComponent() {
