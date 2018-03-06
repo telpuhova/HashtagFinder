@@ -1,10 +1,16 @@
-# TwitterAngularTest
+# HashTagFinder
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+This is an application created to find trending hashtags in specific locations.
+
+This is an Epicodus Group Project for JS that focuses on API development.
 
 ## SET UP
 
 * clone repo
+* go to https://app.twitter.com/app/new
+* you will have to sign in using your twitter account.
+* ![twitterapp](./images/twitterapp.png)
+* you will be given a Consumer Key and a Consumer Secret.
 * create server/config.js:
 
 ```
@@ -19,6 +25,22 @@ module.exports = appsettings;
 * you will need to open two terminals and open server in one terminal and client in another terminal.
 * navigate to the server folder and run `npm start`
 * navigate to client folder and run `ng serve`
+
+### Techologies Used
+
+```
+Angular 2
+Firebase
+Node.js
+JavaScript/TypeScript
+Twitter API
+```
+
+## Authors
+* **Kate Trahan**
+* **Natalia Tepuhova**
+* **Byron Chang**
+* **Jun Li**
 
 ## Development server
 
