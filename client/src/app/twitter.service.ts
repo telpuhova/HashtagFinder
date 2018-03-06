@@ -18,4 +18,9 @@ export class TwitterService {
 //
   }
 
+  addTrends(localTrends) {
+    let trendsInFirebase = this.database.object('trends');
+    trendsInFirebase.update(localTrends);
+  }
+
 }

@@ -1,6 +1,6 @@
 <p>
   trends works!
 </p>
-<div *ngFor="let trend of trends | async"  class="grid-box">
+<div *ngFor="let trend of trends | async" class="grid-box">
   <span *ngIf="trend.tweet_volume != null">{{trend.name}} || {{trend.tweet_volume}}</span>
 </div>
