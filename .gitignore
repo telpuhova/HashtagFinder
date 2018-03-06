@@ -7,6 +7,11 @@
 
 # dependencies
 /node_modules
+/bower_components
+
+#credentials
+/src/app/twitter-creds.ts
+/src/app/encodedCredentials.ts
 
 # IDEs and editors
 /.idea
