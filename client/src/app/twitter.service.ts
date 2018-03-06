@@ -18,4 +18,8 @@ export class TwitterService {
 //
   }
 
+  addTrends(localTrends) {
+    this.trends.push(localTrends);
+  }
+
 }
