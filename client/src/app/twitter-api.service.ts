@@ -23,13 +23,15 @@ export class TwitterApiService {
     var headers = new Headers();
     headers.append('Content-Type', 'application/X-www-form-urlencoded');
 
-    this.http.post('http://localhost:3000/top', {headers: headers}).subscribe((res) => {
-      this.tweetsdata = res.json();
-      // console.log("twitterservice: getInfo: top request");
-      // console.log(this.tweetsdata);
-    });
-    console.log(this.tweetsdata);
-    return this.tweetsdata.data;
+    return this.http.post('http://localhost:3000/top', {headers: headers});
+    // .subscribe((res) => {
+    //   this.tweetsdata = res.json();
+    //   console.log("twitterservice: getInfo: top request");
+    //   console.log(this.tweetsdata);
+    //   // return this.tweetsdata.data;
+    // });
+    // return this.tweetsdata.data;
+    // console.log(this.tweetsdata);
   }
 
 }
