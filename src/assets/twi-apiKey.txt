@@ -1,0 +1,7 @@
+// Consumer Key R0buqUGc9Hz3BypSDnrpdlalV
+// Consumer Secret LNlhYkWqUEmpzwIdi1prhL5AxPB0sRnSOkE7ZCycI9BVUwtLAS
+// Access Token 3189513013-TmhhwEbmTrgg89A8bIZfVrEFhkqaZ0lGjYqSp2N
+// Access Token Secret pEH10GGt8yEidqL2BsXqFl98PQQrF7OYSgEblQoBQpqZF
+//
+// Timestamp 1520274208
+// Nonce 9wymqSK5Qaa

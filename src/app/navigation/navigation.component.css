@@ -1,0 +1,10 @@
+a {
+  color: #F2385A;
+}
+a:hover {
+  color: #F2F2F2;
+}
+.logo {
+  margin: 18px;
+  width: 180px;
+}

@@ -1,0 +1,21 @@
+import { Injectable } from '@angular/core';
+import { Http, Response } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+
+@Injectable()
+export class TwitterService {
+  trends: FirebaseListObservable<any[]>
+  constructor(private database: AngularFireDatabase, private http: HttpClient) {
+    this.trends = database.list('trends');
+  }
+
+  getTrends() {
+    return this.trends;
+  }
+  // getTestData() {
+  //   // return this.http.get("https://api.twitter.com/1.1/trends/place.json?id=1&oauth_consumer_key=R0buqUGc9Hz3BypSDnrpdlalV&oauth_token=3189513013-TmhhwEbmTrgg89A8bIZfVrEFhkqaZ0lGjYqSp2N&oauth_signature_method=HMAC-SHA1&oauth_timestamp=1520290900&oauth_nonce=oJFmnBLHJCv&oauth_version=1.0&oauth_signature=bTV3w5%2FvZMni9wpRYYhra%2FYxIvI%3D");
+  // }
+
+}
