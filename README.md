@@ -25,6 +25,7 @@ module.exports = appsettings;
 * you will need to open two terminals and open server in one terminal and client in another terminal.
 * navigate to the server folder and run `npm start`
 * navigate to client folder and run `ng serve`
+* Open localhost:4200 in your favorite browser
 
 ### Techologies Used
 
@@ -37,10 +38,10 @@ Twitter API
 ```
 
 ## Authors
-* **Kate Trahan**
-* **Natalia Tepuhova**
-* **Byron Chang**
-* **Jun Li**
+* **Kate Trahan** - [katetrahan](https://github.com/katetrahan)
+* **Natalia Tepukhova** - [telpuhova](https://github.com/telpuhova)
+* **Byron Chang** - [thebyronc](https://github.com/thebyronc)
+* **Jun Li** - [june11084](https://github.com/june11084)
 
 ## Development server
 
