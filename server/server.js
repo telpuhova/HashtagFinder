@@ -8,7 +8,7 @@ var app = express();
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(cors());
 app.post('/authorize', functions.authorize);
-app.post('/search', functions.search);
-
+app.post('/search', functions.search); //might need it later
+app.post('/top', functions.top);
 
 app.listen(3000);

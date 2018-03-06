@@ -3,7 +3,6 @@ var config = require('./config');
 
 functions = {
     authorize: function(req, res) {
-      console.log("functions: authorize");
         var header = config.consumerkey + ':' +config.consumersecret;
         var encheader = new Buffer(header).toString('base64');
         var finalheader = 'Basic ' + encheader;
@@ -21,6 +20,7 @@ functions = {
         })
     },
 
+    //might need it later
     search: function(req, res) {
         var searchquery = req.body.query;
         var encsearchquery = encodeURIComponent(searchquery);
@@ -31,6 +31,19 @@ functions = {
              console.log(error);
              else {
                  res.json({success: true, data:JSON.parse(body.body)});
+             }
+         })
+    },
+
+    top: function(req, res) {
+        var bearerheader = 'Bearer ' + config.bearertoken;
+        console.log("bearerheader " + bearerheader);
+        request.get('https://api.twitter.com/1.1/trends/place.json?id=1', {headers: {Authorization: bearerheader}}, function(error, body, response) {
+             if(error)
+              console.log(error);
+             else {
+               console.log("success");
+                  res.json({success: true, data:JSON.parse(body.body)});
              }
          })
     }
