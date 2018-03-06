@@ -10,8 +10,8 @@
 //TestKey
  export var masterFirebaseConfig = {
    apiKey: "AIzaSyD9YnpEx1wNYXSathuPbAjaBswTq6pHw6o",
-   authDomain: "hastagfinder-d2b90.firebaseapp.com",
-   databaseURL: "https://hastagfinder-d2b90.firebaseio.com",
+   authDomain: "hastagfinder.firebaseapp.com",
+   databaseURL: "https://hastagfinder.firebaseio.com",
    projectId: "hastagfinder",
    storageBucket: "hastagfinder.appspot.com",
    messagingSenderId: "720845833118"

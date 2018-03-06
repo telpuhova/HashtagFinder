@@ -26,8 +26,13 @@ export class MainComponent implements OnInit {
   }
 
   getInfo() {
-    this.info = this.twitterApiService.getData().trends;
-    // this.twitterService.update(this.info);
+    this.twitterApiService.getData().subscribe(response => {
+      console.log("component: getInfo: twitterApiService.getData().subscribe: response.json");
+      console.log(response.json());
+      this.info = response.json().data[0].trends;
+      console.log(this.info);
+      this.twitterService.addTrends(this.info);
+    });
   }
 
 }
