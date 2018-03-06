@@ -27,9 +27,7 @@ export class TwitterApiService {
   }
 
   postToObtainABearerToken() {
-    let a = this.http.post('api.twitter.com/oauth2/token', 'grant_type=client_credentials', httpOptions);
-    console.log(a);
-    return a;
+    return this.http.post('api.twitter.com/oauth2/token', 'grant_type=client_credentials', httpOptions);
   }
 
   getInfoTest() {

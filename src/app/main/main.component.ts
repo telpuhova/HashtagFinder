@@ -38,7 +38,9 @@ export class MainComponent implements OnInit {
     this.encodedCredentials = this.twitterApiService.encodeCredentials(consumerKey, consumerSecret);
 
     //post request to obtain bearer token
-    this.twitterApiService.postToObtainABearerToken();
+    this.twitterApiService.postToObtainABearerToken().subscribe(response => {
+        console.log(response.json());
+    });
 
     //Get request
     this.twitterApiService.getInfoTest().subscribe(response => {
