@@ -6,16 +6,21 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 @Injectable()
 export class TwitterService {
   trends: FirebaseListObservable<any[]>
-
+  output: any[] = [];
   constructor(private database: AngularFireDatabase) {
-    this.trends = database.list('trends');
+   this.trends = database.list('/trends', {
+      query: {
+        orderByChild: 'tweet_volume',
+        limitToLast: 5
+      }
+   });
   }
 
   getTrends() {
     return this.trends;
   }
   getTestData() {
-//
+
   }
 
   addTrends(localTrends) {
