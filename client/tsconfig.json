@@ -16,6 +16,11 @@
       "es2016",
       "dom"
     ],
-   "types": [ "firebase" ]
+   "types": [ "firebase" ],
+   "paths": {
+       "plotly.js": [
+           "../node_modules/plotly.js/lib/core.js"
+       ]
+   }
   }
 }

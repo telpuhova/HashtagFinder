@@ -13,6 +13,7 @@ import { MainComponent } from './main/main.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TrendsComponent } from './trends/trends.component';
 import { TrendVolumePipe } from './trend-volume.pipe';
+import { PlotlyComponent } from './plotly/plotly.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { TrendVolumePipe } from './trend-volume.pipe';
     MainComponent,
     NavigationComponent,
     TrendsComponent,
-    TrendVolumePipe
+    TrendVolumePipe,
+    PlotlyComponent
   ],
   imports: [
     BrowserModule,

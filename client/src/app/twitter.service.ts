@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import "rxjs/add/operator/map";
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
 export class TwitterService {
-  trends: FirebaseListObservable<any[]>
+  trends: FirebaseListObservable<any[]>;
   output: any[] = [];
   constructor(private database: AngularFireDatabase) {
    this.trends = database.list('/trends', {
