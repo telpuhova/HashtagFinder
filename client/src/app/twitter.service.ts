@@ -52,11 +52,12 @@ export class TwitterService {
   }
 
   addTrendsByLocation(localTrends, locationIndex) {
-    let trendsInFirebase = this.database.object('trends');
+    let trendsInFirebase = this.database.object('trends_newyork');
+    trendsInFirebase.update(localTrends);
 
-    let obj = {};
-    obj['trends_moscow'] = localTrends;
-    trendsInFirebase.update(obj);
+    // let obj = {};
+    // obj['trends_moscow'] = localTrends;
+    // trendsInFirebase.update(obj);
   }
 
 }
