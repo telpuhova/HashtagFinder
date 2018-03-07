@@ -16,6 +16,7 @@ import { InfoDisplayComponent } from './info-display/info-display.component';
 import { NavigationComponent } from './navigation/navigation.component';
 import { TrendsComponent } from './trends/trends.component';
 import { TrendVolumePipe } from './trend-volume.pipe';
+import { PlotlyComponent } from './plotly/plotly.component';
 
 // export const twitterCredentials = {
 //   TWITTER_CONSUMER_KEY: masterTwitterCredentials.TWITTER_CONSUMER_KEY,
@@ -38,7 +39,8 @@ import { TrendVolumePipe } from './trend-volume.pipe';
     InfoDisplayComponent,
     NavigationComponent,
     TrendsComponent,
-    TrendVolumePipe
+    TrendVolumePipe,
+    PlotlyComponent
   ],
   imports: [
     BrowserModule,
