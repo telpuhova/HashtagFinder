@@ -46,7 +46,7 @@
       <div class="card-body">
         <h5 class="card-title">LONDON</h5>
         <ul class="list-group list-group-flush">
-          <li *ngFor="let trend of trends_london | async | trendVolume" class="list-group-item d-flex justify-content-between align-items-center" >{{trend.name}}<span class="badge badge-primary badge-pill">{{trend.tweet_volume}}</span></li>
+          <li *ngFor="let trend of trends_london | async" class="list-group-item d-flex justify-content-between align-items-center" >{{trend.name}}<span class="badge badge-primary badge-pill">{{trend.tweet_volume}}</span></li>
         </ul>
       </div>
     </div>
