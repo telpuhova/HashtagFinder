@@ -13,7 +13,7 @@ export class TwitterService {
         orderByChild: 'tweet_volume',
         limitToLast: 5
       }
-   });
+   }).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
   }
 
   getTrends() {
