@@ -8,7 +8,12 @@ export class TwitterService {
   trends: FirebaseListObservable<any[]>
 
   constructor(private database: AngularFireDatabase) {
-    this.trends = database.list('trends');
+   this.trends = database.list('/trends', {
+      query: {
+        orderByChild: 'tweet_volume',
+        limitToLast: 5
+      }
+   });
   }
 
   getTrends() {
