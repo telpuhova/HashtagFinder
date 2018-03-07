@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { TwitterApiService } from '../twitter-api.service';
 import { TwitterService } from '../twitter.service';
-// import { twitterCredentials } from '../app.module';
+import { WOEIDS } from '../woeids';
 
 @Component({
   selector: 'app-main',
@@ -17,22 +17,32 @@ export class MainComponent implements OnInit {
   constructor(private twitterApiService: TwitterApiService, private twitterService: TwitterService) { }
 
   ngOnInit() {
+    this.authenticate();
   }
 
   authenticate() {
     this.twitterApiService.postToObtainABearerToken().subscribe(response => {
-        console.log(response.json());
+        // console.log(response.json());
+        console.log('Authentication successful.');
+    });
+  }
+
+  getAllInfo() {
+    this.twitterApiService.getAllData().subscribe(response => {
+      this.info = response.json().data[0].trends;
+      this.twitterService.addTrends(this.info);
     });
   }
 
   getInfo() {
-    this.twitterApiService.getData().subscribe(response => {
-      console.log("component: getInfo: twitterApiService.getData().subscribe: response.json");
-      console.log(response.json());
-      this.info = response.json().data[0].trends;
-      console.log(this.info);
-      this.twitterService.addTrends(this.info);
-    });
+    this.getAllInfo();
+    for (let i=0; i<5; i++) {
+      let woeid = WOEIDS[i].id
+      this.twitterApiService.getData(woeid).subscribe(response => {
+        this.info = response.json().data[0].trends;
+        this.twitterService.addTrendsByLocation(this.info, i);
+      });
+    }
   }
 
 }
