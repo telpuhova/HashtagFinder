@@ -10,5 +10,6 @@ app.use(cors());
 app.post('/authorize', functions.authorize);
 app.post('/search', functions.search); //might need it later
 app.post('/top', functions.top);
+app.post('/topByLocation', functions.topByLocation);
 
 app.listen(3000);
