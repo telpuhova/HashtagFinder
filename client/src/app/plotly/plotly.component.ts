@@ -21,17 +21,43 @@ export class PlotlyComponent implements OnInit {
 
 
   basicChart() {
-    const element = this.el.nativeElement
+    //const element = this.el.nativeElement;
 
-    const data = [{
-      x: [1, 2, 3, 4, 5],
-      y: [1, 2, 4, 8, 16]
-    }]
+    var trace1 = {
+      x: [1, 2, 3, 4],
+      y: [10, 15, 13, 17],
+      mode: 'markers',
+      type: 'scatter'
+    };
 
-    const style = {
-      margin: { t: 0 }
-    }
+    var trace2 = {
+      x: [2, 3, 4, 5],
+      y: [16, 5, 11, 9],
+      mode: 'lines',
+      type: 'scatter'
+    };
 
-    Plotly.plot( element, data, style )
+    var trace3 = {
+      x: [1, 2, 3, 4],
+      y: [12, 9, 15, 12],
+      mode: 'lines+markers',
+      type: 'scatter'
+    };
+
+    var layout = {
+      title: 'Sales Growth',
+      xaxis: {
+        title: 'Year',
+        showgrid: false,
+        zeroline: false
+      },
+      yaxis: {
+        title: 'Percent',
+        showline: false
+      }
+    };
+    var data = [trace1, trace2, trace3];
+    //console.log("test "+element)
+    Plotly.newPlot('chart', data, layout);
   }
 }

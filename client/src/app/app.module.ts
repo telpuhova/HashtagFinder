@@ -31,7 +31,7 @@ import { PlotlyComponent } from './plotly/plotly.component';
     HttpModule,
     routing,
     AngularFireModule.initializeApp(masterFirebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
