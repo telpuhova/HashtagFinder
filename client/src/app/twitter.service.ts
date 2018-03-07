@@ -6,10 +6,26 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 
 @Injectable()
 export class TwitterService {
-  trends: FirebaseListObservable<any[]>
+  trends: FirebaseListObservable<any[]>;
+  trends_portland: FirebaseListObservable<any[]>;
+  trends_newyork: FirebaseListObservable<any[]>;
   output: any[] = [];
   constructor(private database: AngularFireDatabase) {
    this.trends = database.list('/trends', {
+      query: {
+        orderByChild: 'tweet_volume',
+        limitToLast: 5
+      }
+   }).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
+
+   this.trends_portland = database.list('/trends_multnomah', {
+      query: {
+        orderByChild: 'tweet_volume',
+        limitToLast: 5
+      }
+   }).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
+
+   this.trends_newyork = database.list('/trends_newyork', {
       query: {
         orderByChild: 'tweet_volume',
         limitToLast: 5
@@ -19,6 +35,12 @@ export class TwitterService {
 
   getTrends() {
     return this.trends;
+  }
+  getTrendsPortland() {
+    return this.trends_portland;
+  }
+  getTrendsNewYork() {
+    return this.trends_newyork;
   }
   getTestData() {
 

@@ -10,6 +10,8 @@ import { FirebaseListObservable } from 'angularfire2/database';
 })
 export class TrendsComponent implements OnInit {
   trends: FirebaseListObservable<any[]>;
+  trends_portland: FirebaseListObservable<any[]>;
+  trends_newyork: FirebaseListObservable<any[]>;
   output: any[] = [];
   constructor(private twitterService: TwitterService) {
 
@@ -17,5 +19,7 @@ export class TrendsComponent implements OnInit {
 
   ngOnInit() {
     this.trends = this.twitterService.getTrends();
+    this.trends_portland = this.twitterService.getTrendsPortland();
+    this.trends_newyork = this.twitterService.getTrendsNewYork();
   }
 }
