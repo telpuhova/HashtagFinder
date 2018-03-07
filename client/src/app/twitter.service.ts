@@ -8,6 +8,12 @@ import { WOEIDS } from './woeids';
 @Injectable()
 export class TwitterService {
   trends: FirebaseListObservable<any[]>;
+  trends_portland: FirebaseListObservable<any[]>;
+  trends_newyork: FirebaseListObservable<any[]>;
+  trends_moscow: FirebaseListObservable<any[]>;
+  trends_london: FirebaseListObservable<any[]>;
+  trends_sydney: FirebaseListObservable<any[]>;
+
   output: any[] = [];
   constructor(private database: AngularFireDatabase) {
    this.trends = database.list('/trends', {
