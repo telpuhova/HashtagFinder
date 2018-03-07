@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { TwitterApiService } from '../twitter-api.service';
 import { TwitterService } from '../twitter.service';
-// import { twitterCredentials } from '../app.module';
+import { WOEIDS } from '../woeids';
 
 @Component({
   selector: 'app-main',
