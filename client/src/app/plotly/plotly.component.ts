@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ChartService} from '../chart.service'
-import * as _ from 'lodash'
-import { Plotly } from 'plotly.js/lib/core';
+import * as Plotly from 'plotly.js';
 
 @Component({
   selector: 'app-plotly',
