@@ -17,20 +17,19 @@ export class MainComponent implements OnInit {
   constructor(private twitterApiService: TwitterApiService, private twitterService: TwitterService) { }
 
   ngOnInit() {
+    this.authenticate();
   }
 
   authenticate() {
     this.twitterApiService.postToObtainABearerToken().subscribe(response => {
-        console.log(response.json());
+        // console.log(response.json());
+        console.log('Authentication successful.');
     });
   }
 
   getAllInfo() {
     this.twitterApiService.getAllData().subscribe(response => {
-      console.log("component: getInfo: twitterApiService.getData().subscribe: response.json");
-      console.log(response.json());
       this.info = response.json().data[0].trends;
-      console.log(this.info);
       this.twitterService.addTrends(this.info);
     });
   }
@@ -40,11 +39,7 @@ export class MainComponent implements OnInit {
     for (let i=0; i<5; i++) {
       let woeid = WOEIDS[i].id
       this.twitterApiService.getData(woeid).subscribe(response => {
-        console.log("component: getInfo: twitterApiService.getData().subscribe: response.json");
-        console.log(response.json());
         this.info = response.json().data[0].trends;
-        console.log('just the trends: ');
-        console.log(this.info);
         this.twitterService.addTrendsByLocation(this.info, i);
       });
     }

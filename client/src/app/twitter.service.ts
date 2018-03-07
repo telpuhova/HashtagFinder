@@ -83,15 +83,8 @@ export class TwitterService {
   }
 
   addTrendsByLocation(localTrends, locationIndex) {
-    console.log("twitterService: addTrendsByLocation:");
-    console.log('locationIndex: ' + locationIndex);
-    console.log(localTrends);
     let trendsInFirebase = this.database.object(WOEIDS[locationIndex].city);
     trendsInFirebase.set(localTrends);
-
-    // let obj = {};
-    // obj['trends_moscow'] = localTrends;
-    // trendsInFirebase.update(obj);
   }
 
 }
