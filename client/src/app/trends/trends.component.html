@@ -1,7 +1,34 @@
-<p>
-  trends works! *ngIf="trend.tweet_volume != null"
-</p>
-<button (click)="displayTop5Trends()" class="btn">Check Top 5</button>
-<div *ngFor="let trend of trends | async | trendVolume" class="grid-box">
-  <span>{{trend.name}} || {{trend.tweet_volume}}</span>
+<h1 class="display-4">TRENDING</h1>
+<div class="row trend_row">
+
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">WORLDWIDE</h5>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let trend of trends | async | trendVolume" class="list-group-item d-flex justify-content-between align-items-center" >{{trend.name}}<span class="badge badge-primary badge-pill">{{trend.tweet_volume}}</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">PORTLAND OR</h5>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let trend of trends | async | trendVolume" class="list-group-item d-flex justify-content-between align-items-center" >{{trend.name}}<span class="badge badge-primary badge-pill">{{trend.tweet_volume}}</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">NEW YORK NY</h5>
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let trend of trends | async | trendVolume" class="list-group-item d-flex justify-content-between align-items-center" >{{trend.name}}<span class="badge badge-primary badge-pill">{{trend.tweet_volume}}</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
