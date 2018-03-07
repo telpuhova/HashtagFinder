@@ -22,7 +22,7 @@ export class TwitterService {
       }
    }).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
 
-   this.trends_portland = database.list('/trends_multnomah', {
+   this.trends_portland = database.list('/trends_portland', {
       query: {
         orderByChild: 'tweet_volume',
         limitToLast: 5
