@@ -36,6 +36,7 @@ export class MainComponent implements OnInit {
   }
 
   getInfo() {
+    this.getAllInfo();
     for (let i=0; i<5; i++) {
       let woeid = WOEIDS[i].id
       this.twitterApiService.getData(woeid).subscribe(response => {

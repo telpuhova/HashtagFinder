@@ -76,9 +76,10 @@ export class TwitterService {
   getTrendsSydney() {
     return this.trends_sydney;
   }
+
   addTrends(localTrends) {
     let trendsInFirebase = this.database.object('trends');
-    trendsInFirebase.update(localTrends);
+    trendsInFirebase.set(localTrends);
   }
 
   addTrendsByLocation(localTrends, locationIndex) {
