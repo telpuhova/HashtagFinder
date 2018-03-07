@@ -10,6 +10,10 @@ export class TwitterService {
   trends: FirebaseListObservable<any[]>;
   trends_portland: FirebaseListObservable<any[]>;
   trends_newyork: FirebaseListObservable<any[]>;
+  trends_moscow: FirebaseListObservable<any[]>;
+  trends_london: FirebaseListObservable<any[]>;
+  trends_sydney: FirebaseListObservable<any[]>;
+
   output: any[] = [];
   constructor(private database: AngularFireDatabase) {
    this.trends = database.list('/trends', {
@@ -19,7 +23,7 @@ export class TwitterService {
       }
    }).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
 
-   this.trends_portland = database.list('/trends_multnomah', {
+   this.trends_portland = database.list('/trends_portland', {
       query: {
         orderByChild: 'tweet_volume',
         limitToLast: 5
@@ -27,6 +31,26 @@ export class TwitterService {
    }).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
 
    this.trends_newyork = database.list('/trends_newyork', {
+      query: {
+        orderByChild: 'tweet_volume',
+        limitToLast: 5
+      }
+   }).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
+
+   this.trends_moscow = database.list('/trends_moscow', {
+      query: {
+        orderByChild: 'tweet_volume',
+        limitToLast: 5
+      }
+   }).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
+
+   this.trends_london = database.list('/trends_london', {
+      query: {
+        orderByChild: 'tweet_volume',
+        limitToLast: 5
+      }
+   }).map((array) => array.reverse()) as FirebaseListObservable<any[]>;
+   this.trends_sydney = database.list('/trends_sydney', {
       query: {
         orderByChild: 'tweet_volume',
         limitToLast: 5
@@ -43,10 +67,15 @@ export class TwitterService {
   getTrendsNewYork() {
     return this.trends_newyork;
   }
-  getTestData() {
-
+  getTrendsMoscow() {
+    return this.trends_moscow;
   }
-
+  getTrendsLondon() {
+    return this.trends_london;
+  }
+  getTrendsSydney() {
+    return this.trends_sydney;
+  }
   addTrends(localTrends) {
     let trendsInFirebase = this.database.object('trends');
     trendsInFirebase.update(localTrends);
