@@ -6,7 +6,7 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
 @Injectable()
 export class TwitterService {
   trends: FirebaseListObservable<any[]>
-
+  output: any[] = [];
   constructor(private database: AngularFireDatabase) {
     this.trends = database.list('trends');
   }
@@ -15,7 +15,7 @@ export class TwitterService {
     return this.trends;
   }
   getTestData() {
-//
+
   }
 
   addTrends(localTrends) {
