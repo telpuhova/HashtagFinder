@@ -1,4 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
+import { Trend } from './trend.model';
 
 @Pipe({
   name: 'trendVolume',
@@ -6,7 +7,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class TrendVolumePipe implements PipeTransform {
 
-  transform(input: any[], volume) {
+  transform(input: Trend[], volume) {
     // var output: any[] = [];
     // for(var i = 0; i < input.length; i++) {
     //   if(input[i].tweet_volume != null) {
