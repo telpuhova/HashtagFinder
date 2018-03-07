@@ -6,9 +6,15 @@
   background-color: #F2385A;
 }
 .trend_row {
-  margin-top: 25px;
+  /* margin-top: 25px; */
 }
 .card {
   background-color: #F2F2F2;
   border: none;
+}
+.display-4 {
+  font-weight: lighter;
+  color: #505050;
+  font-size: 38px;
+  border-bottom: 1px solid #F2385A;
 }
