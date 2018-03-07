@@ -27,7 +27,6 @@ export class TwitterApiService {
     var headers = new Headers();
     headers.append('Content-Type', 'application/X-www-form-urlencoded');
     let woeidStr = 'query=' + woeid;
-    console.log('woeid: ' + woeidStr)
     return this.http.post('http://localhost:3000/topByLocation', woeidStr, {headers: headers});
   }
 
