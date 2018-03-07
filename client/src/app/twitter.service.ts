@@ -3,6 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import "rxjs/add/operator/map";
 import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import { WOEIDS } from './woeids';
 
 @Injectable()
 export class TwitterService {
@@ -52,8 +53,11 @@ export class TwitterService {
   }
 
   addTrendsByLocation(localTrends, locationIndex) {
-    let trendsInFirebase = this.database.object('trends_newyork');
-    trendsInFirebase.update(localTrends);
+    console.log("twitterService: addTrendsByLocation:");
+    console.log('locationIndex: ' + locationIndex);
+    console.log(localTrends);
+    let trendsInFirebase = this.database.object(WOEIDS[locationIndex].city);
+    trendsInFirebase.set(localTrends);
 
     // let obj = {};
     // obj['trends_moscow'] = localTrends;

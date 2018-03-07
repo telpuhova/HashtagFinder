@@ -36,16 +36,17 @@ export class MainComponent implements OnInit {
   }
 
   getInfo() {
-    //just moscow
-    let i = 3;
-    let woeid = WOEIDS[i].id
-    this.twitterApiService.getData(woeid).subscribe(response => {
-      console.log("component: getInfo: twitterApiService.getData().subscribe: response.json");
-      console.log(response.json());
-      this.info = response.json().data[0].trends;
-      console.log('just the trends: ' + this.info);
-      this.twitterService.addTrendsByLocation(this.info, i);
-    });
+    for (let i=0; i<5; i++) {
+      let woeid = WOEIDS[i].id
+      this.twitterApiService.getData(woeid).subscribe(response => {
+        console.log("component: getInfo: twitterApiService.getData().subscribe: response.json");
+        console.log(response.json());
+        this.info = response.json().data[0].trends;
+        console.log('just the trends: ');
+        console.log(this.info);
+        this.twitterService.addTrendsByLocation(this.info, i);
+      });
+    }
   }
 
 }
