@@ -22,12 +22,8 @@
     "@angular/router": "^4.0.0",
     "angularfire2": "^4.0.0-rc.0",
     "core-js": "^2.4.1",
-<<<<<<< HEAD
     "firebase": "^3.6.6",
     "plotly.js": "^1.34.0",
-=======
-    "firebase": "^3.9.0",
->>>>>>> 389467078e3dfac1ae72101a765ad6d3ed10ae9e
     "rxjs": "^5.1.0",
     "twitter": "^1.7.1",
     "zone.js": "^0.8.4"
