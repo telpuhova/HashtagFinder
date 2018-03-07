@@ -2,9 +2,32 @@
   plotly works!
 </p>
 
-<div #chart>
-  <!-- Chart will appear here -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<div id="graph">
+<script>
+
+// creates plotly.js graph in <div> above
+Plotly.plot(trace, data);
+
+</script>
 </div>
+
+<!-- <head>
+
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+
+  <div id="myDiv" style="width: 480px; height: 300px;"><!-></div>
+  <script>
+
+  </script>
+</body> -->
+
+<!-- <div #chart>
+
+</div> -->
 
 <!-- <div *ngIf="PlotlyData">
     <plotlychart

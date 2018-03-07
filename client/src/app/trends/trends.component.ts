@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { TwitterService } from '../twitter.service';
 import { FirebaseListObservable } from 'angularfire2/database';
-import { PlotlyComponent } from '../plotly/plotly.component';
+// import { PlotlyComponent } from '../plotly/plotly.component';
 @Component({
   selector: 'app-trends',
   templateUrl: './trends.component.html',
