@@ -1,0 +1,14 @@
+.list-group-item {
+  padding: .25rem 0rem;
+  background: none;
+}
+.badge-primary {
+  background-color: #F2385A;
+}
+.trend_row {
+  margin-top: 25px;
+}
+.card {
+  background-color: #F2F2F2;
+  border: none;
+}
