@@ -29,4 +29,12 @@ export class TwitterService {
     trendsInFirebase.update(localTrends);
   }
 
+  addTrendsByLocation(localTrends, locationIndex) {
+    let trendsInFirebase = this.database.object('trends');
+
+    let obj = {};
+    obj['trends_moscow'] = localTrends;
+    trendsInFirebase.update(obj);
+  }
+
 }

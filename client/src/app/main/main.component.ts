@@ -25,13 +25,26 @@ export class MainComponent implements OnInit {
     });
   }
 
-  getInfo() {
-    this.twitterApiService.getData().subscribe(response => {
+  getAllInfo() {
+    this.twitterApiService.getAllData().subscribe(response => {
       console.log("component: getInfo: twitterApiService.getData().subscribe: response.json");
       console.log(response.json());
       this.info = response.json().data[0].trends;
       console.log(this.info);
       this.twitterService.addTrends(this.info);
+    });
+  }
+
+  getInfo() {
+    //just moscow
+    let i = 3;
+    let woeid = WOEIDS[i].id
+    this.twitterApiService.getData(woeid).subscribe(response => {
+      console.log("component: getInfo: twitterApiService.getData().subscribe: response.json");
+      console.log(response.json());
+      this.info = response.json().data[0].trends;
+      console.log('just the trends: ' + this.info);
+      this.twitterService.addTrendsByLocation(this.info, i);
     });
   }
 

@@ -46,6 +46,23 @@ functions = {
                   res.json({success: true, data:JSON.parse(body.body)});
              }
          })
+    },
+
+    topByLocation: function(req, res) {
+      var searchquery = req.body.query;
+      console.log('searchquery: ' + searchquery);
+      var encsearchquery = encodeURIComponent(searchquery);
+      // encsearchquery = 1;
+      console.log('encsearchquery: ' + encsearchquery);
+      var bearerheader = 'Bearer ' + config.bearertoken;
+      request.get('https://api.twitter.com/1.1/trends/place.json?id=' + encsearchquery, {headers: {Authorization: bearerheader}}, function(error, body, response) {
+           if(error)
+            console.log(error);
+           else {
+             console.log("success");
+             res.json({success: true, data:JSON.parse(body.body)});
+           }
+       })
     }
 }
 module.exports = functions;
