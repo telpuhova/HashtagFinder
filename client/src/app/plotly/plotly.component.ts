@@ -21,7 +21,7 @@ export class PlotlyComponent implements OnInit {
 
   basicChart() {
     //const element = this.el.nativeElement;
-    let trendData = this.twitterService.getTopTags();
+    let trendData = this.twitterService.getTopTags(true);
     var trace1 = {
       x: ['giraffes', 'orangutans', 'monkeys'],
       y: [20, 14, 23],

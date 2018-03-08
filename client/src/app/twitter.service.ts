@@ -86,7 +86,7 @@ export class TwitterService {
     let trendsInFirebase = this.database.object(WOEIDS[locationIndex].city);
     trendsInFirebase.set(localTrends);
   }
-  getTopTags() {
+  getTopTags(filter) {
     let output: any[] = [[],[]];
     let allTrends: any[] = [this.trends, this.trends_portland, this.trends_newyork, this.trends_moscow, this.trends_london, this.trends_sydney];
     for(let i = 0; i < allTrends.length; i++) {
@@ -98,6 +98,9 @@ export class TwitterService {
           }
         }
       });
+    }
+    if(filter === true) {
+      output.splice(output.indexOf("#OneDirectionBestFans"), 1);
     }
     console.log(output);
     return output;
