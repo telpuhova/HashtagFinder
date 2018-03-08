@@ -86,15 +86,76 @@ export class TwitterService {
     let trendsInFirebase = this.database.object(WOEIDS[locationIndex].city);
     trendsInFirebase.set(localTrends);
   }
+  getTopTags() {
+    let output: any[] = [[],[]];
+    let allTrends: any[] = [this.trends, this.trends_portland, this.trends_newyork, this.trends_moscow, this.trends_london, this.trends_sydney];
+    for(let i = 0; i < allTrends.length; i++) {
+      allTrends[i].forEach(function(child){
+        for(let x = 0; x < child.length; x++){
+          output[0].push(child[x].name);
+          output[1].push(child[x].tweet_volume);
+        }
+      });
+    }
+    console.log(output);
+    return output;
+  }
+
   viewByTag(trend) {
-    // let toReturn: any[] = [];
-    // toReturn.push(trend.name);
-    this.trends_newyork.forEach(function(child){
-    console.log(child[0].name);
-      // if(child.name === trend.name) {
-      //   console.log(child.name + " " + child.tweet_volume);
-      // }
+    let output: any[]  = [];
+    let portland: FirebaseListObservable<any[]>;
+    let newYork: FirebaseListObservable<any[]>;
+    let moscow: FirebaseListObservable<any[]>;
+    let london: FirebaseListObservable<any[]>;
+    let sydney: FirebaseListObservable<any[]>;
+    newYork = this.database.list('/trends_newyork');
+    newYork.forEach(function(child){
+      for(let i = 0; i < child.length; i++){
+        if(trend.name === child[i].name) {
+            console.log(child[i].name + " " + child[i].tweet_volume);
+            output.push({"New York": child[i].tweet_volume});
+        }
+      }
     });
+    portland = this.database.list('/trends_portland');
+    portland.forEach(function(child){
+      for(let i = 0; i < child.length; i++){
+        if(trend.name === child[i].name) {
+            console.log(child[i].name + " " + child[i].tweet_volume);
+            output.push({"Portland": child[i].tweet_volume});
+        }
+      }
+    });
+
+    moscow = this.database.list('/trends_moscow');
+    moscow.forEach(function(child){
+      for(let i = 0; i < child.length; i++){
+        if(trend.name === child[i].name) {
+            console.log(child[i].name + " " + child[i].tweet_volume);
+            output.push({"Moscow": child[i].tweet_volume});
+        }
+      }
+    });
+
+    london = this.database.list('/trends_london');
+    london.forEach(function(child){
+      for(let i = 0; i < child.length; i++){
+        if(trend.name === child[i].name) {
+            console.log(child[i].name + " " + child[i].tweet_volume);
+            output.push({"London": child[i].tweet_volume});
+        }
+      }
+    });
+    sydney = this.database.list('/trends_sydney');
+    sydney.forEach(function(child){
+      for(let i = 0; i < child.length; i++){
+        if(trend.name === child[i].name) {
+            console.log(child[i].name + " " + child[i].tweet_volume);
+            output.push({"Sydney": child[i].tweet_volume});
+        }
+      }
+    });
+    console.log(output);
   }
 
 }
