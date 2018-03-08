@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TwitterService} from '../twitter.service'
 declare function require(moduleName: string): any;
 var Plotly = require('plotly.js/dist/plotly.js');
+
 @Component({
   selector: 'app-plotly',
   templateUrl: './plotly.component.html',
@@ -20,7 +21,7 @@ export class PlotlyComponent implements OnInit {
 
 
   basicChart() {
-    let graphArray = this.twitterService.getTopTags();
+    let graphArray = this.twitterService.getTopTags(true);
     const element = this.el.nativeElement;
     console.log("grapharray: "+graphArray);
     // var trace1 = {};

@@ -44,8 +44,6 @@ export class MainComponent implements OnInit {
       });
     }
   }
-  getTopTags() {
-    this.twitterService.getTopTags();
-  }
+
 
 }

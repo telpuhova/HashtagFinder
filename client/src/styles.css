@@ -4,9 +4,18 @@ html, body {
 }
 body {
   font-family: 'Source Sans Pro', sans-serif;
+  margin: 0px;
+}
+a {
+  color: #757AD1;
+}
+a:hover{
+  color: #8FA8FF;
 }
 .mainBox {
   height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 .red {
   color: #F2385A;

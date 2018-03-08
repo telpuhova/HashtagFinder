@@ -86,7 +86,7 @@ export class TwitterService {
     let trendsInFirebase = this.database.object(WOEIDS[locationIndex].city);
     trendsInFirebase.set(localTrends);
   }
-  getTopTags() {
+  getTopTags(filter) {
     let output: any[] = [[],[]];
     let allTrends: any[] = [this.trends, this.trends_portland, this.trends_newyork, this.trends_moscow, this.trends_london, this.trends_sydney];
     for(let i = 0; i < allTrends.length; i++) {
@@ -99,7 +99,11 @@ export class TwitterService {
         }
       });
     }
-    console.log(output);
+    // if(filter == true) {
+    //   output[1].splice(output[0].indexOf("#OneDirectionBestFans"), 1);
+    //   output[0].splice(output[0].indexOf("#OneDirectionBestFans"), 1);
+    // }
+    // console.log(output[0][0]);
     return output;
   }
 
