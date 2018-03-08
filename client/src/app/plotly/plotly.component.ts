@@ -21,42 +21,34 @@ export class PlotlyComponent implements OnInit {
 
   basicChart() {
     //const element = this.el.nativeElement;
-
     var trace1 = {
-      x: [1, 2, 3, 4],
-      y: [10, 15, 13, 17],
-      mode: 'markers',
-      type: 'scatter'
-    };
-
-    var trace2 = {
-      x: [2, 3, 4, 5],
-      y: [16, 5, 11, 9],
-      mode: 'lines',
-      type: 'scatter'
-    };
-
-    var trace3 = {
-      x: [1, 2, 3, 4],
-      y: [12, 9, 15, 12],
-      mode: 'lines+markers',
-      type: 'scatter'
-    };
-
-    var layout = {
-      title: 'Sales Growth',
-      xaxis: {
-        title: 'Year',
-        showgrid: false,
-        zeroline: false
-      },
-      yaxis: {
-        title: 'Percent',
-        showline: false
+      x: ['Liam', 'Sophie', 'Jacob', 'Mia', 'William', 'Olivia'],
+      y: [8.0, 8.0, 12.0, 12.0, 13.0, 20.0],
+      type: 'bar',
+      text: ['4.17 below the mean', '4.17 below the mean', '0.17 below the mean', '0.17 below the mean', '0.83 above the mean', '7.83 above the mean'],
+      marker: {
+        color: 'rgb(142,124,195)'
       }
     };
-    var data = [trace1, trace2, trace3];
-    //console.log("test "+element)
+
+    var data = [trace1];
+
+    var layout = {
+      title: 'Number of Graphs Made this Week',
+      font:{
+        family: 'Raleway, snas-serif'
+      },
+      showlegend: false,
+      xaxis: {
+        tickangle: -45
+      },
+      yaxis: {
+        zeroline: false,
+        gridwidth: 2
+      },
+      bargap :0.05
+    };
+
     Plotly.newPlot('chart', data, layout);
   }
 }
