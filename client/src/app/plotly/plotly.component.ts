@@ -21,7 +21,7 @@ export class PlotlyComponent implements OnInit {
 
 
   basicChart() {
-    let graphArray = this.twitterService.getTopTags();
+    let graphArray = this.twitterService.getTopTags(true);
     const element = this.el.nativeElement;
     console.log("grapharray: "+graphArray);
     // var trace1 = {};

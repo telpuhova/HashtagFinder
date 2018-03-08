@@ -99,10 +99,11 @@ export class TwitterService {
         }
       });
     }
-    if(filter === true) {
-      output.splice(output.indexOf("#OneDirectionBestFans"), 1);
-    }
-    console.log(output);
+    // if(filter == true) {
+    //   output[1].splice(output[0].indexOf("#OneDirectionBestFans"), 1);
+    //   output[0].splice(output[0].indexOf("#OneDirectionBestFans"), 1);
+    // }
+    // console.log(output[0][0]);
     return output;
   }
 
