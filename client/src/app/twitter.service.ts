@@ -86,5 +86,15 @@ export class TwitterService {
     let trendsInFirebase = this.database.object(WOEIDS[locationIndex].city);
     trendsInFirebase.set(localTrends);
   }
+  viewByTag(trend) {
+    // let toReturn: any[] = [];
+    // toReturn.push(trend.name);
+    this.trends_newyork.forEach(function(child){
+    console.log(child[0].name);
+      // if(child.name === trend.name) {
+      //   console.log(child.name + " " + child.tweet_volume);
+      // }
+    });
+  }
 
 }
