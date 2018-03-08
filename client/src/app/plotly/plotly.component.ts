@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TwitterService} from '../twitter.service'
 import * as Plotly from 'plotly.js';
-// import { graph_objs } from 'plotly.js';
+// import graph_objs  from 'plotly.js';
 
 
 @Component({
