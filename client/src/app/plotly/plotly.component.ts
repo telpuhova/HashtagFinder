@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TwitterService} from '../twitter.service'
-// import * as Plotly from 'plotly.js';
 declare function require(moduleName: string): any;
 var Plotly = require('plotly.js/dist/plotly.js');
 @Component({
@@ -52,6 +51,9 @@ export class PlotlyComponent implements OnInit {
       }
     };
 
-    Plotly.newPlot(element, data, layout);
+     setTimeout(function () {
+       Plotly.newPlot(element, data, layout);
+     }, 500);
+
   }
 }
