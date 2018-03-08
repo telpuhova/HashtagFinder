@@ -28,4 +28,7 @@ export class TrendsComponent implements OnInit {
     this.trends_london = this.twitterService.getTrendsLondon();
     this.trends_sydney = this.twitterService.getTrendsSydney();
   }
+  viewByTag(trend) {
+    this.twitterService.viewByTag(trend);
+  }
 }
