@@ -1,8 +1,13 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TwitterService} from '../twitter.service'
+
+
+
+
 // import * as Plotly from 'plotly.js';
 declare function require(moduleName: string): any;
 var Plotly = require('plotly.js/dist/plotly.js');
+
 @Component({
   selector: 'app-plotly',
   templateUrl: './plotly.component.html',
