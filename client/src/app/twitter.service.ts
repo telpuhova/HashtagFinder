@@ -92,8 +92,10 @@ export class TwitterService {
     for(let i = 0; i < allTrends.length; i++) {
       allTrends[i].forEach(function(child){
         for(let x = 0; x < child.length; x++){
-          output[0].push(child[x].name);
-          output[1].push(child[x].tweet_volume);
+          if(output[0].indexOf(child[x].name) === -1) {
+            output[0].push(child[x].name);
+            output[1].push(child[x].tweet_volume);
+          }
         }
       });
     }
