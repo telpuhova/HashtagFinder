@@ -1,8 +1,12 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TwitterService} from '../twitter.service'
-import * as Plotly from 'plotly.js';
-// import graph_objs  from 'plotly.js';
 
+
+
+
+// import * as Plotly from 'plotly.js';
+declare function require(moduleName: string): any;
+var Plotly = require('plotly.js/dist/plotly.js');
 
 @Component({
   selector: 'app-plotly',
@@ -45,8 +49,12 @@ export class PlotlyComponent implements OnInit {
     var data = [trace1];
 
     var layout = {
-      title: 'Popularity',
-      autorange: true
+      xaxis: {
+        autorange: true,
+      },
+      yaxis: {
+        autorange: true,
+      }
     };
 
     Plotly.newPlot(element, data, layout);
