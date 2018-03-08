@@ -45,7 +45,7 @@ Plotly
 * **Jun Li** - [june11084](https://github.com/june11084)
 
 
-##Ambitions to be implemented in the future
+## Ambitions to be implemented in the future
 
 * Add more data. We were able to pull a very specific type of data; global tweet volume and trending topics based on location. In the future we would like to work with more data in order to help make the graph more useful.
 * Add a search bar functionality. In the future we would like to allow users to search any hashtag and get a return on the twitter volume.
