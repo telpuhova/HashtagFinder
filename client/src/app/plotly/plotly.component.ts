@@ -1,7 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { TwitterService} from '../twitter.service'
-import * as Plotly from 'plotly.js';
-import { bar } from 'plotly.js';
+// import * as Plotly from 'plotly.js';
+declare function require(moduleName: string): any;
+var Plotly = require('plotly.js/dist/plotly.js');
 @Component({
   selector: 'app-plotly',
   templateUrl: './plotly.component.html',
@@ -20,15 +21,37 @@ export class PlotlyComponent implements OnInit {
 
 
   basicChart() {
-    //const element = this.el.nativeElement;
-    let trendData = this.twitterService.getTopTags(true);
+    let graphArray = this.twitterService.getTopTags();
+    const element = this.el.nativeElement;
+    console.log("grapharray: "+graphArray);
+    // var trace1 = {};
+    // trace1["x"]= graphArray[0];
+    // trace1["y"] = graphArray[1];
+    // trace1["type"] = 'bar';
+    // trace1["marker"] = {
+    //   color: 'rgb(142,124,195)'
+    // };
+    // console.log(trace1);
     var trace1 = {
-      x: ['giraffes', 'orangutans', 'monkeys'],
-      y: [20, 14, 23],
-      type: 'bar'
+      x: graphArray[0],
+      y: graphArray[1],
+      type: 'bar',
+      marker: {
+        color: 'rgb(142,124,195)'
+      }
     };
+
     var data = [trace1];
-    //console.log("test "+element)
-    Plotly.newPlot('chart', data);
+
+    var layout = {
+      xaxis: {
+        autorange: true,
+      },
+      yaxis: {
+        autorange: true,
+      }
+    };
+
+    Plotly.newPlot(element, data, layout);
   }
 }
